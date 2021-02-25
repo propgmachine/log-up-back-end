@@ -3,15 +3,51 @@
 // And you can and should use them in your `isRegisteredUser` function.
 // But we use them in your test code as well, so whatever you do, don't delete them!
 
-const user1 = 'colin.jaffe@codeimmersives.com';
-const password1 = 'Hotforhimself';
-const user2 = 'mesuara@codeimmersives.com';
-const password2 = 'Console.logger';
-const user3 = 'anthony@codeimmersives.com';
-const password3 = 'like a BOSS';
+const user1 = 'steve.hixson@codeimmersives.com';
+const password1 = 'password01';
+const user2 = 'stephen.hixson@digitalfilmacademy.edu';
+const password2 = '1qaz2wsx#EDDC$RFV';
+const user3 = 'sbhixson@gmail.com';
+const password3 = 'theEarthIsFlat';
 
 
 // **YOUR** code below. Pass those tests!
+
+function isValidEmail(email) {
+    return email.endsWith("@codeimmersives.com") && email.length > 20;
+}
+
+function isValidPassword(password) {
+  return (
+    password.length > 8 &&
+    password.toUpperCase() === password &&
+    password.toLowerCase() === password 
+  );
+}
+
+function isRegisteredUser(email) {
+  return email === user1 || email === user2 || email === user3;
+}
+
+function passwordMatches(email, password) {
+  return (
+    (email === user1 && password === password1) ||
+    (email === user2 && password === password2) ||
+    (email === user3 && password === password3) 
+  );
+}
+
+function passWordMatchesMessage(email, password) {
+  if (email === user1 && password === password1) {
+    return 'Password matches!'
+  } else if (email === user2 && password === password2) {
+    return 'Password matches!'
+  } else if (email === user3 && password === password3) {
+    return 'Password matches!'
+  } else {
+    return 'Password does NOT match'
+  }
+}
 
 
 
